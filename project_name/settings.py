@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'main.apps.MainConfig', # user installed app
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,3 +126,7 @@ STATICFILES_DIRS = [
 ]
 # project root level static root
 STATIC_ROOT = "./static_root/"
+
+# whitenoise staticfiles srotage
+if not DEBUG:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedMainfestStaticFilesStorage'

@@ -29,6 +29,9 @@ Remote use syntax:
 django-admin startproject --template https://github.com/username/repo/archive/master.zip --name=Procfile new_django_project .
 ```
 
+### Static Files
+Static files are pretty confusing. Whitenoise is an external Django library that makes it easier to use 1 server for both hosting Django and static files. Whitenoise requires and installed app and a layer of middleware to work correctly.
+
 When the project is ready to deploy, use the following steps to deploy to a server running Dokku:
 
 You will need to initiaize the project with git, at some point. If you haven't already:
@@ -51,5 +54,6 @@ The default Procfile needs to be manually set to your project name:
 Should be ready to git push!
 `git push dokku master`
 
-TODO:
+ TODO:
 
+- Add instructions and configuration code for whitenoise static files 
