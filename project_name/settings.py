@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "main/static",
 ]
 # project root level static root
-STATIC_ROOT = "./static_root/"
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # whitenoise staticfiles srotage
 if not DEBUG:

@@ -55,5 +55,3 @@ Should be ready to git push!
 `git push dokku master`
 
  TODO:
-
-- Add instructions and configuration code for whitenoise static files 
