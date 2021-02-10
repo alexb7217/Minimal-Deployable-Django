@@ -1,0 +1,3 @@
+#!/bin/bash
+./manage.py collectstatic --nopinput
+./manage.py migrate --nopinput
