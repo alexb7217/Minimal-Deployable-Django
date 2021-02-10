@@ -32,6 +32,9 @@ django-admin startproject --template https://github.com/username/repo/archive/ma
 ### Static Files
 Static files are pretty confusing. Whitenoise is an external Django library that makes it easier to use 1 server for both hosting Django and static files. Whitenoise requires and installed app and a layer of middleware to work correctly.
 
+The `collectstatic` command should create a staticfiles dir at the root level.
+
+
 When the project is ready to deploy, use the following steps to deploy to a server running Dokku:
 
 You will need to initiaize the project with git, at some point. If you haven't already:
