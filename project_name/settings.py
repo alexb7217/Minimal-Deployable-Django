@@ -25,8 +25,8 @@ SECRET_KEY = 'replacemewithsomethingbetter!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# SECURITY WARNING: do not allow * hosts in production!``
-ALLOWED_HOSTS = [*]
+# SECURITY WARNING: restrict hosts in production!
+ALLOWED_HOSTS = []
 
 # Application definition
 

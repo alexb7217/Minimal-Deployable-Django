@@ -31,13 +31,25 @@ django-admin startproject --template https://github.com/username/repo/archive/ma
 
 When the project is ready to deploy, use the following steps to deploy to a server running Dokku:
 
+You will need to initiaize the project with git, at some point. If you haven't already:
 ```
+cd /path/to/new_django_project
+git init .
+
+# after git init, add remote for dokku server
 git remote add dokku dokku@your_dokku_fqdn:django-project-name
 ```
+If you're deploying, add server to ALLOWED_HOSTS, something like:
+`- ALLOWED_HOSTS = [*]`
+`ALLOWED_HOSTS = ['127.0.0.1','your-fqdv.net']`
+
+Adjust Procfile
+The default Procfile needs to be manually set to your project name: 
+`- web: gunicorn {{ project_name }}.wsgi --log-file `
+`+ web: gunicorn django-project-name.wsgi --log-file `
+
+Should be ready to git push!
+`git push dokku master`
 
 TODO:
-- Instruction for Pipfile.log and or requirements.txt
-- set up static files properly
-- remove node from buildpacks, or add node to project (for deploy error)
-- adjust Procfile to work properly / add note to remove || remove it
 
