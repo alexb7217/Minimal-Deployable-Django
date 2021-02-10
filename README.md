@@ -34,3 +34,10 @@ When the project is ready to deploy, use the following steps to deploy to a serv
 ```
 git remote add dokku dokku@your_dokku_fqdn:django-project-name
 ```
+
+TODO:
+- Instruction for Pipfile.log and or requirements.txt
+- set up static files properly
+- remove node from buildpacks, or add node to project (for deploy error)
+- adjust Procfile to work properly / add note to remove || remove it
+

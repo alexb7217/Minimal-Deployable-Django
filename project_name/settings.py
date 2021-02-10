@@ -120,8 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
+    BASE_DIR / "main/static",
 ]
-# set to actual static root
-STATIC_ROOT = "/var/www/example.com/static/"
+# project root level static root
+STATIC_ROOT = "./static_root/"
