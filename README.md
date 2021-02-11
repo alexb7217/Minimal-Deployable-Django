@@ -6,6 +6,7 @@ My attempt at creating the most bare-bones Django project possible, that is stil
 * Runs on sqlite built in database
 * Includes URL config and routes for at least 1 viewable page (index.html)
 * Static assets directories
+* Deploys to a dokku server in as few steps as possible
 
 
 Start with these comands on a *nix based system with the appropriate requirements:
@@ -50,8 +51,6 @@ You will need to initiaize the project with git, at some point. If you haven't a
 cd /path/to/new_django_project # (on the same level as manage.py)
 git init .
 
-# after git init, add remote for dokku server
-git remote add dokku dokku@your_dokku_fqdn:django-project-name
 ```
 
 * Note - a `.gitignore` file is a good idea - especially for the `staticfiles` directory. This will be re-generated on the server, and will hold a potential ton of stuff you don't want to commit and deploy.
@@ -72,8 +71,21 @@ The default Procfile needs to be manually set to your project name:
 
 Do the usual git add / commit stuff after files are changed and ready.
 
+#### Basic Dokku setup on server
+```
+$ dokku apps:create myDjangoApp
+$ dokku domains:add myDjangoApp mydjangoapp.myfqdn.net
+$ dokku domains:report myDjangoApp 
+```
+
+```
+# after git init, add remote for dokku server
+git remote add dokku dokku@your_dokku_fqdn:myDjangoApp
+```
+
 Should be ready to git push!
 `git push dokku master`
 
  TODO:
 - add a minimal environment variable setting system
+- add how-to for setting up dokku on a basic level
