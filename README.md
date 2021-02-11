@@ -51,11 +51,11 @@ You will need to initiaize the project with git, at some point. If you haven't a
 cd /path/to/new_django_project # (on the same level as manage.py)
 git init .
 
-
-
 ```
 
 * Note - a `.gitignore` file is a good idea - especially for the `staticfiles` directory. This will be re-generated on the server, and will hold a potential ton of stuff you don't want to commit and deploy.
+
+In fact - this repo has a placeholder, reminder file `gitignore.txt` to convert into a `.gitignore` file. Use it.
 
 #### Changes to `settings.py`
 Don't forget to change the SECRET_KEY to something better - or better yet, add in an environment variable setting system.
