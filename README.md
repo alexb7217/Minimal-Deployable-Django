@@ -29,6 +29,13 @@ Remote use syntax:
 django-admin startproject --template https://github.com/username/repo/archive/master.zip --name=Procfile new_django_project .
 ```
 
+### Develop locally
+You may find anther way works better - however you can easily use the Pipenv created to create the project like:
+
+```
+$ pipenv install -r deploy_template_test/requirements.txt 
+```
+
 ### Static Files
 Static files are pretty confusing. Whitenoise is an external Django library that makes it easier to use 1 server for both hosting Django and static files. Whitenoise requires and installed app and a layer of middleware to work correctly.
 
@@ -53,6 +60,8 @@ Adjust Procfile
 The default Procfile needs to be manually set to your project name: 
 `- web: gunicorn {{ project_name }}.wsgi --log-file `
 `+ web: gunicorn django-project-name.wsgi --log-file `
+
+Do the usual git add / commit stuff after files are changed and ready.
 
 Should be ready to git push!
 `git push dokku master`
