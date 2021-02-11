@@ -51,6 +51,8 @@ You will need to initiaize the project with git, at some point. If you haven't a
 cd /path/to/new_django_project # (on the same level as manage.py)
 git init .
 
+
+
 ```
 
 * Note - a `.gitignore` file is a good idea - especially for the `staticfiles` directory. This will be re-generated on the server, and will hold a potential ton of stuff you don't want to commit and deploy.
