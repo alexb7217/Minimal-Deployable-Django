@@ -47,13 +47,19 @@ When the project is ready to deploy, use the following steps to deploy to a serv
 
 You will need to initiaize the project with git, at some point. If you haven't already:
 ```
-cd /path/to/new_django_project
+cd /path/to/new_django_project # (on the same level as manage.py)
 git init .
 
 # after git init, add remote for dokku server
 git remote add dokku dokku@your_dokku_fqdn:django-project-name
 ```
+
+* Note - a `.gitignore` file is a good idea - especially for the `staticfiles` directory. This will be re-generated on the server, and will hold a potential ton of stuff you don't want to commit and deploy.
+
+#### Changes to `settings.py`
 Don't forget to change the SECRET_KEY to something better - or better yet, add in an environment variable setting system.
+
+Also important - set DEBUG to `False` for production deployment. This could also be handled by an environment variable setting. One dirty trick is to set `DEBUG = False` immediately prior to deployment, git commit the project and deploy. You can change DEBUG back to True for additional local development work.
 
 If you're deploying, add server to ALLOWED_HOSTS, something like:
 `- ALLOWED_HOSTS = [*]`
