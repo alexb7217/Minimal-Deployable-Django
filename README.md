@@ -66,7 +66,7 @@ If you're deploying, add server to ALLOWED_HOSTS, something like:
 `- ALLOWED_HOSTS = [*]`
 `ALLOWED_HOSTS = ['127.0.0.1','your-fqdv.net']`
 
-Adjust Procfile
+#### Adjust Procfile
 The default Procfile needs to be manually set to your project name: 
 `- web: gunicorn {{ project_name }}.wsgi --log-file `
 `+ web: gunicorn django-project-name.wsgi --log-file `
