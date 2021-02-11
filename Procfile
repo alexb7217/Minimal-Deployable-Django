@@ -1,1 +1,1 @@
-web: gunicorn <<change-me>>.wsgi --log-file -
+web: gunicorn <<change-Procfile-settings!>>.wsgi --log-file -

@@ -129,4 +129,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # whitenoise staticfiles srotage
 if not DEBUG:
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManfestStaticFilesStorage'
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

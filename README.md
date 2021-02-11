@@ -66,7 +66,7 @@ If you're deploying, add server to ALLOWED_HOSTS, something like:
 `- ALLOWED_HOSTS = [*]`
 `ALLOWED_HOSTS = ['127.0.0.1','your-fqdv.net']`
 
-Adjust Procfile
+#### Adjust Procfile
 The default Procfile needs to be manually set to your project name: 
 `- web: gunicorn {{ project_name }}.wsgi --log-file `
 `+ web: gunicorn django-project-name.wsgi --log-file `
@@ -79,6 +79,7 @@ $ dokku apps:create myDjangoApp
 $ dokku domains:add myDjangoApp mydjangoapp.myfqdn.net
 $ dokku domains:report myDjangoApp 
 ```
+* Note you may need to add the app to any subdomain DNS on your web host as well
 
 ```
 # after git init, add remote for dokku server
