@@ -79,6 +79,7 @@ $ dokku apps:create myDjangoApp
 $ dokku domains:add myDjangoApp mydjangoapp.myfqdn.net
 $ dokku domains:report myDjangoApp 
 ```
+* Note you may need to add the app to any subdomain DNS on your web host as well
 
 ```
 # after git init, add remote for dokku server
