@@ -1,1 +1,1 @@
-web: gunicorn <<change-Procfile-settings!>>.wsgi --log-file -
+web: gunicorn {{ project_name }}.wsgi --log-file -

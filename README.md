@@ -29,6 +29,7 @@ Remote use syntax:
 ```
 django-admin startproject --template https://github.com/username/repo/archive/master.zip --name=Procfile new_django_project
 ```
+The `--name=Procfile bit tells the system to rename the Procfile properly
 
 ### Develop locally
 You may find anther way works better - however you can easily use the Pipenv created to create the project like:
@@ -67,7 +68,7 @@ If you're deploying, add server to ALLOWED_HOSTS, something like:
 `ALLOWED_HOSTS = ['127.0.0.1','your-fqdv.net']`
 
 #### Adjust Procfile
-The default Procfile needs to be manually set to your project name: 
+If it wasn't set when the project was created, the default Procfile needs to be manually set to your project name: 
 `- web: gunicorn {{ project_name }}.wsgi --log-file `
 `+ web: gunicorn django-project-name.wsgi --log-file `
 
